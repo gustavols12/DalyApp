@@ -14,7 +14,7 @@ export function Input() {
       return;
     }
 
-    router.push(`/games/search/${input}`);
+    router.push(`/game/search/${input}`);
   }
   return (
     <form
