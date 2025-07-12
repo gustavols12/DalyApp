@@ -3,9 +3,38 @@ import { GameProps } from "@/utils/types/game";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 import { Label } from "@/components/label";
-import Link from "next/link";
-import { BsArrowRightSquare } from "react-icons/bs";
 import { GameCard } from "@/components/gameCard";
+import { Metadata } from "next";
+
+interface PropsParams {
+  params: {
+    id: string;
+  };
+}
+
+export async function generateMetadata({
+  params,
+}: PropsParams): Promise<Metadata> {
+  try {
+    const response: GameProps = await fetch(
+      `${process.env.NEXT_API_URL}/next-api/?api=game&id=${params.id}`
+    )
+      .then((res) => res.json())
+      .catch(() => {
+        return {
+          title: "DalyGames - Descubra jogos incríveis para se divertir.",
+        };
+      });
+
+    return {
+      title: response.title,
+    };
+  } catch (erro) {
+    return {
+      title: "DalyGames - Descubra jogos incríveis para se divertir.",
+    };
+  }
+}
 
 async function getGame(id: string) {
   try {
