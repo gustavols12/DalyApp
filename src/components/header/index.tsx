@@ -1,7 +1,7 @@
-import Link from "next/link";
-import Image from "next/image";
-import logo from "@/app/assests/logo.svg";
-import { LiaGamepadSolid } from "react-icons/lia";
+import Link from 'next/link';
+import Image from 'next/image';
+import logo from '@/app/assests/logo.svg';
+import { LiaGamepadSolid } from 'react-icons/lia';
 
 export function Header() {
   return (
@@ -17,7 +17,7 @@ export function Header() {
               className="w-full"
             />
           </Link>
-          <Link href="/games">Games</Link>
+          <Link href="/">Games</Link>
           <Link href="/profile">Perfil</Link>
         </nav>
         <div className="hidden sm:flex justify-center items-center">
