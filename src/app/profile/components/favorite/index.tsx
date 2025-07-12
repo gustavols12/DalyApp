@@ -1,7 +1,6 @@
 'use client';
 import { useState } from 'react';
 import { FiEdit, FiX } from 'react-icons/fi';
-import { Input } from '@/components/input';
 
 export function FavoriteGame() {
   const [input, setInput] = useState('');

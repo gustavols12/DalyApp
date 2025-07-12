@@ -4,6 +4,12 @@ import userImg from '@/app/assests/user.png';
 import { FaShareAlt } from 'react-icons/fa';
 import { FavoriteGame } from './components/favorite';
 
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Meu perfil',
+};
+
 export default function Profile() {
   return (
     <main className="w-full text-black">
